@@ -4,8 +4,8 @@ class UrlManager():
     """
 
     def __init__(self):
-    	self.new_urls = set()
         self.new_urls = set()
+        self.old_urls = set()
 
     def add_new_url(self,url):
 	    if url is None or len(url) == 0:
@@ -35,17 +35,20 @@ class UrlManager():
         return len(self.new_urls) > 0
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     url_manager = UrlManager()
 
     url_manager.add_new_url("www.baidu.com")
-    url.manager.add_new_urls(["www.baidu.com","www.google.com"])
+    url_manager.add_new_urls(["www.baidu.com","www.google.com"])
     print(url_manager.new_urls, url_manager.old_urls)
 
     print("#"*30)
     new_url = url_manager.get_url()
     print(url_manager.new_urls, url_manager.old_urls)
 
+    print("#"*30)
+    new_url = url_manager.get_url()
+    print(url_manager.new_urls, url_manager.old_urls)
 
     print("#"*30)
     print(url_manager.has_new_url())
